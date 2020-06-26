@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PhotoCard from "./PhotoCard";
+import { Jumbotron } from 'reactstrap';
 
 export default function PhotoList() {
     const [photos, setPhotos] = useState([]);
@@ -19,12 +20,14 @@ export default function PhotoList() {
 
     return (
         <div>
+            <Jumbotron>
             <PhotoCard
                 date={photos.date}
                 explanation={photos.explanation}
                 image={photos.url}
                 title={photos.title}
             />
+            </Jumbotron>
         </div>
     );
 }
